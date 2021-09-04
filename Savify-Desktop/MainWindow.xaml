@@ -1,0 +1,58 @@
+﻿<Window x:Class="Savify_Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Savify_Desktop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="264,318,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Label x:Name="label_version" Content="Label" HorizontalAlignment="Left" Margin="637,378,0,0" VerticalAlignment="Top" Height="31" Width="145"/>
+        <TextBox x:Name="textbox_query" HorizontalAlignment="Left" Height="39" Margin="259,35,0,0" TextWrapping="Wrap" Text="Query" VerticalAlignment="Top" Width="394"/>
+        <CheckBox x:Name="checkbox_no_cover_art" Content="Don't add cover art to downloaded song(s)." HorizontalAlignment="Left" Margin="115,225,0,0" VerticalAlignment="Top" Height="36" Width="296"/>
+        <Label Content="Query" Margin="63,31,533,345"/>
+        <ComboBox x:Name="combobox_query_type" HorizontalAlignment="Left" Margin="264,105,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="track"/>
+            <ComboBoxItem Content="album"/>
+            <ComboBoxItem Content="playlist"/>
+        </ComboBox>
+        <ComboBox x:Name="combobox_bitrate" HorizontalAlignment="Left" Margin="264,132,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="best"/>
+            <ComboBoxItem Content="320k"/>
+            <ComboBoxItem Content="256k"/>
+            <ComboBoxItem Content="192k"/>
+            <ComboBoxItem Content="128k"/>
+            <ComboBoxItem Content="96k"/>
+            <ComboBoxItem Content="32k"/>
+            <ComboBoxItem Content="worst"/>
+        </ComboBox>
+        <ComboBox x:Name="combobox_format" HorizontalAlignment="Left" Margin="264,159,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Content="mp3"/>
+            <ComboBoxItem Content="aac"/>
+            <ComboBoxItem Content="flac"/>
+            <ComboBoxItem Content="m4a"/>
+            <ComboBoxItem Content="opus"/>
+            <ComboBoxItem Content="vorbis"/>
+            <ComboBoxItem Content="wav"/>
+        </ComboBox>
+        <TextBox x:Name="textbox_output_directory" HorizontalAlignment="Left" Height="23" Margin="259,266,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Zielverzeichnis" HorizontalAlignment="Left" Margin="411,269,0,0" VerticalAlignment="Top" Width="154" Click="Button_Click"/>
+        <TextBox x:Name="textbox_grouping" HorizontalAlignment="Left" Height="34" Margin="264,186,0,0" TextWrapping="Wrap" Text="%artist%/%album%" VerticalAlignment="Top" Width="389"/>
+        <Label Content="Grouping" HorizontalAlignment="Left" Margin="189,186,0,0" VerticalAlignment="Top" >
+            <Label.ToolTip>
+                <TextBlock>
+          Directory grouping for downloaded song(s).
+          <LineBreak /> 
+          Available variables: %artist%, %album%, %playlist%
+          <LineBreak />
+          For example:
+          <LineBreak />
+          $ savify "You and I - Bru-C" -o /path/to/downloads -g "%artist%/%album%"
+                </TextBlock>
+            </Label.ToolTip>
+        </Label>
+        <Button Content="Öffne Pfad" HorizontalAlignment="Left" Margin="365,318,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
